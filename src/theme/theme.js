@@ -2,7 +2,9 @@
 import { createTheme } from "@mui/material/styles";
 
 // ─── Font families ───────────────────────────────────────────────────────────
-const POPPINS = '"Poppins", system-ui, -apple-system, sans-serif';
+// Barlow Condensed: rigid, tactical condensed face used widely in defense/firearms branding
+const BARLOW_CONDENSED =
+  '"Barlow Condensed", "Arial Narrow", system-ui, sans-serif';
 const INTER =
   '"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif';
 
@@ -44,42 +46,51 @@ const theme = createTheme({
 
   // ─── Typography ─────────────────────────────────────────────────────────
   typography: {
-    // Headings — Poppins
+    // Headings — Barlow Condensed (rigid, tactical, condensed)
     h1: {
-      fontFamily: POPPINS,
+      fontFamily: BARLOW_CONDENSED,
       fontWeight: 700,
-      fontSize: "clamp(40px, 6vw, 64px)",
-      lineHeight: 1.15,
+      fontSize: "clamp(48px, 7vw, 80px)",
+      lineHeight: 1.05,
+      letterSpacing: "1px",
+      textTransform: "uppercase",
     },
     h2: {
-      fontFamily: POPPINS,
+      fontFamily: BARLOW_CONDENSED,
       fontWeight: 700,
-      fontSize: "clamp(30px, 4.5vw, 48px)",
-      lineHeight: 1.2,
+      fontSize: "clamp(34px, 5vw, 56px)",
+      lineHeight: 1.1,
+      letterSpacing: "0.5px",
+      textTransform: "uppercase",
     },
     h3: {
-      fontFamily: POPPINS,
+      fontFamily: BARLOW_CONDENSED,
       fontWeight: 600,
-      fontSize: "clamp(22px, 3vw, 32px)",
-      lineHeight: 1.25,
+      fontSize: "clamp(24px, 3.5vw, 36px)",
+      lineHeight: 1.15,
+      letterSpacing: "0.5px",
+      textTransform: "uppercase",
     },
     h4: {
-      fontFamily: POPPINS,
+      fontFamily: BARLOW_CONDENSED,
       fontWeight: 600,
-      fontSize: "24px",
-      lineHeight: 1.3,
+      fontSize: "28px",
+      lineHeight: 1.2,
+      letterSpacing: "0.3px",
     },
     h5: {
-      fontFamily: POPPINS,
+      fontFamily: BARLOW_CONDENSED,
       fontWeight: 600,
-      fontSize: "20px",
-      lineHeight: 1.3,
+      fontSize: "22px",
+      lineHeight: 1.25,
+      letterSpacing: "0.3px",
     },
     h6: {
-      fontFamily: POPPINS,
+      fontFamily: BARLOW_CONDENSED,
       fontWeight: 600,
       fontSize: "18px",
-      lineHeight: 1.35,
+      lineHeight: 1.3,
+      letterSpacing: "0.2px",
     },
 
     // Body — Inter

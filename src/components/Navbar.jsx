@@ -36,15 +36,17 @@ function Navbar() {
             component={Link}
             to="/"
             sx={{
-              fontFamily: '"Poppins", sans-serif',
-              fontWeight: 700,
-              fontSize: "20px",
-              color: "primary.main",
+              display: "flex",
+              alignItems: "center",
               textDecoration: "none",
-              letterSpacing: "0.5px",
             }}
           >
-            Armero
+            <Box
+              component="img"
+              src="/src/assets/navbar.png"
+              alt="Armero Technologies"
+              sx={{ height: 44, width: "auto" }}
+            />
           </Box>
 
           {isMobile ? (
