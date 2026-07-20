@@ -174,7 +174,14 @@ function Home() {
             maxWidth="lg"
             sx={{ position: "relative", zIndex: 1, py: { xs: 12, md: 16 } }}
           >
-            <Box ref={heroContentRef} sx={{ maxWidth: 680 }}>
+            <Box
+              ref={heroContentRef}
+              sx={{
+                maxWidth: 680,
+                mx: { xs: "auto", md: 0 },
+                textAlign: { xs: "center", md: "left" },
+              }}
+            >
               {/* Tag */}
               <Typography
                 variant="overline"
@@ -212,7 +219,11 @@ function Home() {
               </Typography>
 
               {/* CTAs */}
-              <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+              <Stack
+                direction={{ xs: "column", sm: "row" }}
+                spacing={2}
+                alignItems={{ xs: "stretch", sm: "flex-start" }}
+              >
                 <Button
                   component={Link}
                   to="/projects"
@@ -531,7 +542,11 @@ function Home() {
               variant="contained"
               color="primary"
               size="large"
-              sx={{ px: 4, py: 1.5 }}
+              sx={{
+                px: 4,
+                py: 1.5,
+                display: { xs: "none", sm: "inline-flex" },
+              }}
             >
               Learn More
             </Button>
@@ -602,7 +617,7 @@ function Home() {
             variant="contained"
             color="primary"
             size="large"
-            sx={{ px: 6, py: 1.75 }}
+            sx={{ px: 6, py: 1.75, width: { xs: "100%", sm: "auto" } }}
           >
             Get in Touch
           </Button>
