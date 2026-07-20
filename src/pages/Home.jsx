@@ -156,7 +156,7 @@ function Home() {
             alignItems: "center",
             backgroundImage: `url(${machineGun})`,
             backgroundSize: "cover",
-            backgroundPosition: "center right",
+            backgroundPosition: { xs: "85% center", md: "center right" },
             backgroundRepeat: "no-repeat",
           }}
         >
