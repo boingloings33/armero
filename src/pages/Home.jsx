@@ -509,7 +509,7 @@ function Home() {
           backgroundImage: `url(${heroBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: { xs: "fixed" },
+          backgroundAttachment: { sm: "fixed" },
         }}
       >
         <Box
