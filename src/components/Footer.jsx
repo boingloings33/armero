@@ -79,8 +79,8 @@ function Footer() {
               component={Link}
               to="/"
               sx={{
-                display: "inline-flex",
-                alignItems: "center",
+                display: "flex",
+                justifyContent: { xs: "center", md: "flex-start" },
                 mb: 2,
                 textDecoration: "none",
               }}
@@ -94,14 +94,24 @@ function Footer() {
             </Box>
             <Typography
               variant="body2"
-              sx={{ color: "text.secondary", mb: 3, maxWidth: 280 }}
+              sx={{
+                color: "text.secondary",
+                mb: 3,
+                maxWidth: 280,
+                mx: { xs: "auto", md: 0 },
+                textAlign: { xs: "center", md: "left" },
+              }}
             >
               Defense support company delivering professional weapons
               maintenance, mobile ultrasonic cleaning, and armory solutions.
             </Typography>
 
             {/* Socials */}
-            <Stack direction="row" spacing={0.5}>
+            <Stack
+              direction="row"
+              spacing={0.5}
+              justifyContent={{ xs: "center", md: "flex-start" }}
+            >
               {SOCIALS.map(({ label, icon, href }) => (
                 <IconButton
                   key={label}
@@ -129,8 +139,11 @@ function Footer() {
             </Stack>
           </Grid>
 
-          {/* ── Quick links col ── */}
-          <Grid size={{ xs: 6, md: 2 }}>
+          {/* ── Quick links col — desktop only ── */}
+          <Grid
+            size={{ xs: 0, md: 2 }}
+            sx={{ display: { xs: "none", md: "block" } }}
+          >
             <Typography
               variant="overline"
               sx={{
@@ -162,8 +175,11 @@ function Footer() {
             </Stack>
           </Grid>
 
-          {/* ── Services col ── */}
-          <Grid size={{ xs: 6, md: 3 }}>
+          {/* ── Services col — desktop only ── */}
+          <Grid
+            size={{ xs: 0, md: 3 }}
+            sx={{ display: { xs: "none", md: "block" } }}
+          >
             <Typography
               variant="overline"
               sx={{
@@ -203,11 +219,12 @@ function Footer() {
                 letterSpacing: "2px",
                 display: "block",
                 mb: 2,
+                textAlign: { xs: "center", md: "left" },
               }}
             >
               Contact
             </Typography>
-            <Stack spacing={2}>
+            <Stack spacing={2} alignItems={{ xs: "center", md: "flex-start" }}>
               {CONTACT_ITEMS.map(({ icon, value, href }) => (
                 <Box
                   key={value}
@@ -246,31 +263,6 @@ function Footer() {
                 </Box>
               ))}
             </Stack>
-
-            <Box
-              sx={{
-                mt: 3,
-                p: 2,
-                border: "1px solid",
-                borderColor: "divider",
-                bgcolor: "rgba(178,16,14,0.05)",
-              }}
-            >
-              <Typography
-                variant="caption"
-                sx={{ color: "text.secondary", display: "block" }}
-              >
-                <Box
-                  component="span"
-                  sx={{ color: "primary.main", fontWeight: 600 }}
-                >
-                  armerotech.com
-                </Box>
-              </Typography>
-              <Typography variant="caption" sx={{ color: "text.secondary" }}>
-                Veteran Owned · Mission Focused
-              </Typography>
-            </Box>
           </Grid>
         </Grid>
 
@@ -281,7 +273,8 @@ function Footer() {
             display: "flex",
             flexDirection: { xs: "column", sm: "row" },
             justifyContent: "space-between",
-            alignItems: { xs: "flex-start", sm: "center" },
+            alignItems: "center",
+            textAlign: "center",
             gap: 1,
           }}
         >

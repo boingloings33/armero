@@ -36,15 +36,15 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const CAPABILITIES = [
-  "Mobile & On-Site Ultrasonic Weapons Cleaning",
-  "Weapons Maintenance & Inspection Services",
-  "Firearm Cleaning Supplies & Consumables",
-  "Cotton Swabs for Weapons Maintenance",
-  "CLP & Armory Support Products",
-  "Recycled Cotton Rags & Cleaning Materials",
-  "Sight Mounting & Adjustment Services",
-  "Select Gunsmithing Services",
-  "Shooting Glasses & Hearing Protection",
+  { text: "Mobile & On-Site Ultrasonic Weapons Cleaning" },
+  { text: "Weapons Maintenance & Inspection Services" },
+  { text: "Firearm Cleaning Supplies & Consumables" },
+  { text: "Cotton Swabs for Weapons Maintenance", mobileHide: true },
+  { text: "CLP & Armory Support Products" },
+  { text: "Recycled Cotton Rags & Cleaning Materials", mobileHide: true },
+  { text: "Sight Mounting & Adjustment Services" },
+  { text: "Select Gunsmithing Services" },
+  { text: "Shooting Glasses & Hearing Protection", mobileHide: true },
 ];
 
 const DIFFERENTIATORS = [
@@ -52,21 +52,31 @@ const DIFFERENTIATORS = [
   { icon: <ShieldIcon />, label: "Founded by a U.S. Marine Corps Armorer" },
   {
     icon: <GpsFixedIcon />,
-    label: "Real-World Military Weapons Maintenance Experience",
+    label: "Real-World Military Maintenance Experience",
   },
   {
     icon: <DirectionsCarIcon />,
-    label: "Mobile Service Capability — Tactical 4×4 Sprinter Van",
+    label: "Mobile Service — Tactical 4×4 Sprinter Van",
   },
   {
     icon: <BuildIcon />,
     label: "Focus on Weapons Safety & Operational Readiness",
+    mobileHide: true,
   },
-  { icon: <RecyclingIcon />, label: "Sustainable Carbon Recycling Program" },
-  { icon: <GroupsIcon />, label: "Veteran Workforce Development Mission" },
+  {
+    icon: <RecyclingIcon />,
+    label: "Sustainable Carbon Recycling Program",
+    mobileHide: true,
+  },
+  {
+    icon: <GroupsIcon />,
+    label: "Veteran Workforce Development Mission",
+    mobileHide: true,
+  },
   {
     icon: <SupportAgentIcon />,
     label: "Responsive Small Business Customer Support",
+    mobileHide: true,
   },
 ];
 
@@ -353,33 +363,36 @@ function Home() {
             />
           </Box>
 
-          <Grid container spacing={2}>
-            {CAPABILITIES.map((cap) => (
-              <Grid key={cap} size={{ xs: 12, sm: 6, md: 4 }}>
+          <Grid container spacing={2} justifyContent="center">
+            {CAPABILITIES.map(({ text, mobileHide }) => (
+              <Grid
+                key={text}
+                size={{ xs: 12, sm: 6, md: 4 }}
+                sx={{
+                  display: { xs: mobileHide ? "none" : "flex", md: "flex" },
+                }}
+              >
                 <Box
                   sx={{
                     display: "flex",
-                    alignItems: "flex-start",
+                    alignItems: { xs: "center", sm: "flex-start" },
+                    flexDirection: { xs: "column", sm: "row" },
+                    textAlign: { xs: "center", sm: "left" },
                     gap: 1.5,
                     p: 2.5,
                     borderRadius: "8px",
                     border: "1px solid",
                     borderColor: "divider",
-                    height: "100%",
+                    width: "100%",
                     transition: "border-color 0.2s",
                     "&:hover": { borderColor: "primary.main" },
                   }}
                 >
                   <CheckCircleIcon
-                    sx={{
-                      color: "primary.main",
-                      mt: "2px",
-                      flexShrink: 0,
-                      fontSize: 20,
-                    }}
+                    sx={{ color: "primary.main", flexShrink: 0, fontSize: 20 }}
                   />
                   <Typography variant="body2" sx={{ color: "text.primary" }}>
-                    {cap}
+                    {text}
                   </Typography>
                 </Box>
               </Grid>
@@ -414,9 +427,15 @@ function Home() {
             />
           </Box>
 
-          <Grid container spacing={3}>
-            {DIFFERENTIATORS.map(({ icon, label }) => (
-              <Grid key={label} size={{ xs: 12, sm: 6, md: 3 }}>
+          <Grid container spacing={3} justifyContent="center">
+            {DIFFERENTIATORS.map(({ icon, label, mobileHide }) => (
+              <Grid
+                key={label}
+                size={{ xs: 6, sm: 6, md: 3 }}
+                sx={{
+                  display: { xs: mobileHide ? "none" : "flex", md: "flex" },
+                }}
+              >
                 <Box
                   sx={{
                     textAlign: "center",
@@ -476,7 +495,7 @@ function Home() {
           backgroundImage: `url(${heroBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: { md: "fixed" },
+          backgroundAttachment: { xs: "fixed" },
         }}
       >
         <Box
@@ -490,7 +509,13 @@ function Home() {
           maxWidth="lg"
           sx={{ position: "relative", zIndex: 1, py: { xs: 8, md: 10 } }}
         >
-          <Box sx={{ maxWidth: 560 }}>
+          <Box
+            sx={{
+              maxWidth: 560,
+              mx: { xs: "auto", md: 0 },
+              textAlign: { xs: "center", md: "left" },
+            }}
+          >
             <SectionLabel>Mobile Capability</SectionLabel>
             <Typography variant="h2" sx={{ color: "text.primary", mb: 3 }}>
               Service Comes to You
