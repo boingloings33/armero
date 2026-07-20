@@ -44,7 +44,7 @@ function Navbar() {
           >
             <Box
               component="img"
-              src="/src/assets/navbar.png"
+              src={logoNavbar}
               alt="Armero Technologies"
               sx={{ height: 44, width: "auto" }}
             />
