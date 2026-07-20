@@ -3,6 +3,7 @@ import {
   Toolbar,
   Box,
   Button,
+  Container,
   IconButton,
   Drawer,
   List,
@@ -32,7 +33,11 @@ function Navbar() {
   return (
     <>
       <AppBar position="fixed" elevation={0}>
-        <Toolbar sx={{ justifyContent: "space-between", px: { xs: 2, md: 4 } }}>
+        <Toolbar disableGutters>
+          <Container
+            maxWidth="lg"
+            sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}
+          >
           <Box
             component={Link}
             to="/"
@@ -82,6 +87,7 @@ function Navbar() {
               ))}
             </Box>
           )}
+          </Container>
         </Toolbar>
       </AppBar>
 
