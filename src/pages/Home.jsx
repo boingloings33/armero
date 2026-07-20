@@ -179,7 +179,7 @@ function Home() {
               sx={{
                 maxWidth: 680,
                 mx: { xs: "auto", md: 0 },
-                textAlign: { xs: "center", md: "left" },
+                textAlign: { xs: "center", sm: "left" },
               }}
             >
               {/* Tag */}
