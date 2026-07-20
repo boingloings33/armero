@@ -132,7 +132,7 @@ function Contact() {
           borderColor: "primary.main",
         }}
       >
-        <HexGrid hexSize={40} redChance={0.004} baseOpacityMax={0.07} />
+        <HexGrid hexSize={40} redChance={0.004} baseOpacityMax={0.25} />
 
         <Box
           sx={{

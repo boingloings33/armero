@@ -283,7 +283,10 @@ function Home() {
       >
         <Container maxWidth="lg">
           <Grid container spacing={{ xs: 6, md: 10 }} alignItems="center">
-            <Grid size={{ xs: 12, md: 7 }} sx={{ textAlign: { xs: "center", md: "left" } }}>
+            <Grid
+              size={{ xs: 12, md: 7 }}
+              sx={{ textAlign: { xs: "center", md: "left" } }}
+            >
               <SectionLabel>Company Overview</SectionLabel>
               <Typography variant="h2" sx={{ mb: 4, color: "text.primary" }}>
                 Built by Warfighters.
@@ -356,7 +359,7 @@ function Home() {
         }}
       >
         {/* Animated hex grid sits behind content */}
-        <HexGrid />
+        <HexGrid baseOpacityMax={0.25} />
         <Container maxWidth="lg">
           <Box sx={{ textAlign: "center", mb: 8 }}>
             <SectionLabel>What We Do</SectionLabel>
