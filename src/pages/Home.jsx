@@ -193,7 +193,7 @@ function Home() {
                   display: "block",
                 }}
               >
-                Veteran-Owned Defense Support Company
+                Armero Technologies
               </Typography>
 
               {/* Headline */}
