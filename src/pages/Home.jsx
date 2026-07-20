@@ -225,14 +225,17 @@ function Home() {
                 alignItems={{ xs: "stretch", sm: "flex-start" }}
               >
                 <Button
-                  component={Link}
-                  to="/projects"
                   variant="contained"
                   color="primary"
                   size="large"
                   sx={{ px: 4, py: 1.5 }}
+                  onClick={() =>
+                    document
+                      .getElementById("company-overview")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                 >
-                  Our Services
+                  Our Mission
                 </Button>
                 <Button
                   component={Link}
@@ -272,6 +275,7 @@ function Home() {
 
       {/* ── COMPANY OVERVIEW ───────────────────────────────────────────── */}
       <Box
+        id="company-overview"
         sx={{
           position: "relative",
           zIndex: 1,
