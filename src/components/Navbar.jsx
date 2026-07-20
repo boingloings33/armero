@@ -36,57 +36,63 @@ function Navbar() {
         <Toolbar disableGutters>
           <Container
             maxWidth="lg"
-            sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}
-          >
-          <Box
-            component={Link}
-            to="/"
             sx={{
               display: "flex",
               alignItems: "center",
-              textDecoration: "none",
+              justifyContent: "space-between",
             }}
           >
             <Box
-              component="img"
-              src={logoNavbar}
-              alt="Armero Technologies"
-              sx={{ height: 44, width: "auto" }}
-            />
-          </Box>
-
-          {isMobile ? (
-            <IconButton
-              edge="end"
-              color="inherit"
-              onClick={() => setDrawerOpen(true)}
-              aria-label="open navigation menu"
+              component={Link}
+              to="/"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                textDecoration: "none",
+              }}
             >
-              <MenuIcon />
-            </IconButton>
-          ) : (
-            <Box sx={{ display: "flex", gap: 1 }}>
-              {NAV_LINKS.map(({ label, path }) => (
-                <Button
-                  key={path}
-                  component={Link}
-                  to={path}
-                  color={pathname === path ? "primary" : "inherit"}
-                  sx={{
-                    fontWeight: pathname === path ? 600 : 400,
-                    borderBottom:
-                      pathname === path ? "2px solid" : "2px solid transparent",
-                    borderColor:
-                      pathname === path ? "primary.main" : "transparent",
-                    borderRadius: 0,
-                    pb: "2px",
-                  }}
-                >
-                  {label}
-                </Button>
-              ))}
+              <Box
+                component="img"
+                src={logoNavbar}
+                alt="Armero Technologies"
+                sx={{ height: 44, width: "auto" }}
+              />
             </Box>
-          )}
+
+            {isMobile ? (
+              <IconButton
+                edge="end"
+                color="inherit"
+                onClick={() => setDrawerOpen(true)}
+                aria-label="open navigation menu"
+              >
+                <MenuIcon />
+              </IconButton>
+            ) : (
+              <Box sx={{ display: "flex", gap: 1 }}>
+                {NAV_LINKS.map(({ label, path }) => (
+                  <Button
+                    key={path}
+                    component={Link}
+                    to={path}
+                    color={pathname === path ? "primary" : "inherit"}
+                    sx={{
+                      fontWeight: pathname === path ? 600 : 400,
+                      borderBottom:
+                        pathname === path
+                          ? "2px solid"
+                          : "2px solid transparent",
+                      borderColor:
+                        pathname === path ? "primary.main" : "transparent",
+                      borderRadius: 0,
+                      pb: "2px",
+                    }}
+                  >
+                    {label}
+                  </Button>
+                ))}
+              </Box>
+            )}
           </Container>
         </Toolbar>
       </AppBar>
