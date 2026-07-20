@@ -28,6 +28,7 @@ import logoIcon from "../assets/base.png";
 import mascotsImg from "../assets/mascots-image.jpg";
 import vanInside from "../assets/van-inside.jpg";
 import HexGrid from "../components/HexGrid";
+import CircuitGrid from "../components/CircuitGrid";
 import machineGun from "../assets/machine-gun.jpg";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -143,7 +144,7 @@ function Home() {
             minHeight: "100vh",
             display: "flex",
             alignItems: "center",
-            backgroundImage: `url(${heroBg})`,
+            backgroundImage: `url(${machineGun})`,
             backgroundSize: "cover",
             backgroundPosition: "center right",
             backgroundRepeat: "no-repeat",
@@ -175,7 +176,7 @@ function Home() {
                   display: "block",
                 }}
               >
-                Disabled Veteran-Owned Defense Support Company
+                Veteran-Owned Defense Support Company
               </Typography>
 
               {/* Headline */}
@@ -296,7 +297,7 @@ function Home() {
                         sx={{
                           color: "primary.main",
                           letterSpacing: "1.5px",
-                          display: "block",
+                          display: { xs: "none", sm: "block" },
                         }}
                       >
                         {val}
@@ -472,7 +473,7 @@ function Home() {
           minHeight: { xs: 360, md: 480 },
           display: "flex",
           alignItems: "center",
-          backgroundImage: `url(${machineGun})`,
+          backgroundImage: `url(${heroBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: { md: "fixed" },
@@ -518,57 +519,68 @@ function Home() {
         sx={{
           position: "relative",
           zIndex: 1,
-          bgcolor: "#0d0d0d",
+          bgcolor: "background.paper",
           overflow: "hidden",
-          py: { xs: 6, md: 8 },
-          textAlign: "center",
+          //   borderTop: "3px solid",
+          borderColor: "primary.main",
+          py: { xs: 10, md: 16 },
+          display: "flex",
+          alignItems: "center",
         }}
       >
-        {/* Animated hex grid sits behind content */}
-        <HexGrid />
-
-        {/* Subtle red vignette from center */}
-        <Box
-          sx={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "radial-gradient(ellipse 70% 80% at 50% 50%, rgba(178,16,14,0.18) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
+        <CircuitGrid
+          nodeSpacing={80}
+          pulseRate={3}
+          redRatio={0.3}
+          baseOpacity={0.06}
         />
 
-        <Container maxWidth="md" sx={{ position: "relative", zIndex: 1 }}>
+        <Container
+          maxWidth="md"
+          sx={{ position: "relative", zIndex: 1, textAlign: "center" }}
+        >
           <Typography
-            variant="h3"
+            variant="overline"
             sx={{
-              color: "text.primary",
-              fontWeight: 700,
-              letterSpacing: "1px",
+              color: "primary.main",
+              letterSpacing: "3px",
+              display: "block",
               mb: 2,
             }}
           >
-            Ready Today. Ready Tomorrow. Always Ready.
+            Armero Technologies
           </Typography>
-          <Typography variant="body1" sx={{ color: "text.secondary", mb: 4 }}>
-            Veteran Owned. Mission Focused. Supporting Those Who Protect.
-          </Typography>
-          <Stack
-            direction={{ xs: "column", sm: "row" }}
-            spacing={2}
-            justifyContent="center"
+          <Typography
+            variant="h1"
+            sx={{
+              color: "text.primary",
+              lineHeight: 1,
+              mb: 5,
+              "& span": { display: "block" },
+            }}
           >
-            <Button
-              component={Link}
-              to="/contact"
-              variant="contained"
-              color="primary"
-              size="large"
-              sx={{ px: 4, py: 1.5 }}
-            >
-              Get in Touch
-            </Button>
-          </Stack>
+            <span>Ready Today.</span>
+            <span>Ready Tomorrow.</span>
+            <Box component="span" sx={{ color: "primary.main" }}>
+              Always Ready.
+            </Box>
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{ color: "text.secondary", mb: 5, maxWidth: 480, mx: "auto" }}
+          >
+            Supporting Those Who Protect our Nation.
+          </Typography>
+          <Button
+            component={Link}
+            to="/contact"
+            variant="contained"
+            color="primary"
+            size="large"
+            sx={{ px: 6, py: 1.75 }}
+          >
+            Get in Touch
+          </Button>
         </Container>
       </Box>
     </Box>

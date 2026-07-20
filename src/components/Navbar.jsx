@@ -14,6 +14,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logoNavbar from "../assets/navbar.png";
 
 const NAV_LINKS = [
   { label: "Home", path: "/" },
