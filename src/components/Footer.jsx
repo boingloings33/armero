@@ -92,19 +92,19 @@ function Footer() {
                 sx={{ height: 52, width: "auto" }}
               />
             </Box>
-            <Typography
+            {/* <Typography
               variant="body2"
               sx={{
                 color: "text.secondary",
                 mb: 3,
-                maxWidth: 280,
+                // maxWidth: 280,
                 mx: { xs: "auto", md: 0 },
                 textAlign: { xs: "center", md: "left" },
               }}
             >
               Defense support company delivering professional weapons
               maintenance, mobile ultrasonic cleaning, and armory solutions.
-            </Typography>
+            </Typography> */}
 
             {/* Socials */}
             <Stack
