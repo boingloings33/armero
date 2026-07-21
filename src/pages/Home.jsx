@@ -363,7 +363,7 @@ function Home() {
         }}
       >
         {/* Animated hex grid sits behind content */}
-        <HexGrid baseOpacityMax={0.12} />
+        <HexGrid baseOpacityMax={0.04} />
         <Container maxWidth="lg">
           <Box sx={{ textAlign: "center", mb: 8 }}>
             <SectionLabel>What We Do</SectionLabel>
